@@ -7,6 +7,9 @@ from flask import (
     jsonify,
     request,
     redirect)
+from flask_sqlalchemy import SQLAlchemy
+import psycopg2
+
 
 #################################################
 # Flask Setup
@@ -17,7 +20,7 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-from flask_sqlalchemy import SQLAlchemy
+
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite"
 
 # Remove tracking modifications
